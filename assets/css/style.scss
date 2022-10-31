@@ -178,10 +178,14 @@ body {
   svg {
     @media (max-width: 1200px) {
       width: 100% !important;
+      height: unset !important;
     }
   }
 }
 .hero-content {
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
+  }
   .typed-cursor {
     display: none;
   }
@@ -225,6 +229,9 @@ body {
     font-size: 16px;
     margin-bottom: 50px;
     color: #fff;
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
   }
   .contact {
     display: inline-flex;
@@ -290,6 +297,9 @@ body {
     @media (max-width: 1200px) {
       width: 100% !important;
     }
+    @media (max-width: 767px) {
+      height: unset !important;
+    }
   }
 }
 .about-content {
@@ -304,12 +314,20 @@ body {
       line-height: 56px;
       margin-bottom: 30px;
     }
+    @media (max-width: 767px) {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
   }
   .text {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 50px;
     @media (max-width: 1200px) {
       margin-bottom: 30px;
+    }
+    @media (max-width: 767px) {
+      font-size: 15px;
     }
   }
 }
@@ -381,6 +399,9 @@ body {
 .financial-sector-area {
   padding: 100px 0px 70px;
   background: #160e33;
+  @media (max-width: 767px) {
+    padding: 80px 0px 50px;
+  }
 }
 .financial-title {
   text-align: center;
@@ -400,7 +421,7 @@ body {
       line-height: 50px;
     }
     @media (max-width: 767px) {
-      font-size: 30px;
+      font-size: 24px;
       line-height: 40px;
     }
   }
@@ -415,7 +436,7 @@ body {
       line-height: 24px;
     }
     @media (max-width: 767px) {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }
@@ -577,6 +598,9 @@ body {
   background: linear-gradient(161.62deg, #0b528c 11.84%, #032037 74.54%);
   position: relative;
   overflow: hidden;
+  @media (max-width: 767px) {
+    padding: 80px 0px;
+  }
 }
 .work-wrap {
   display: block;
@@ -647,6 +671,9 @@ body {
 .testmonial-area {
   background: #160e33;
   padding: 120px 0px;
+  @media (max-width: 767px) {
+    padding: 80px 0px;
+  }
 }
 .testmonial-wrap {
   background: #160e33;
@@ -731,6 +758,9 @@ body {
 }
 .client-area {
   padding: 120px 0px;
+  @media (max-width: 767px) {
+    padding: 80px 0px;
+  }
 }
 .brand-items {
   display: flex;
@@ -752,6 +782,40 @@ body {
 .management-area {
   background: #083c82;
   padding: 120px 0px 95px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  @media (max-width: 767px) {
+    padding: 80px 0px;
+  }
+  .management-shape {
+    position: absolute;
+    z-index: -1;
+    animation: leftright 1s infinite alternate;
+
+    &.left {
+      top: 180px;
+      left: -15px;
+      @media (max-width: 991px) {
+        top: 15px;
+      }
+    }
+    &.right {
+      bottom: 150px;
+      right: -15px;
+      @media (max-width: 991px) {
+        bottom: 15px;
+      }
+    }
+  }
+}
+@keyframes leftright {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
 }
 .management-wrap {
   background: #adc6e9;
@@ -795,6 +859,9 @@ body {
     font-size: 22px;
     color: #4097ff;
     margin-bottom: 15px;
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
   }
   .info {
     font-size: 16px;
@@ -878,5 +945,27 @@ body {
       font-size: 18px;
       color: #fff;
     }
+  }
+}
+.parallax__container {
+  clip: rect(0, auto, auto, 0);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -100;
+  .parallax {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
   }
 }
